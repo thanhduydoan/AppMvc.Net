@@ -16,3 +16,10 @@ options.ViewLocationFormats.Add("/MyView{1}/{0} + RazorViewEngine.ViewExtension)
 -ViewData
 -ViewBag
 -TemData
+## Areas
+-Là tên người dùng để routing
+-Là cấu trúc thư mục chứa M.V.C
+-Thiết lập Area cho controller bằng ```(Area("AreaName"))```
+-Tạo cấu trúc thư mục
+
+dotnet aspnet-codegenerator area Product
