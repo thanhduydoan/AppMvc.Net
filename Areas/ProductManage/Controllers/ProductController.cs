@@ -18,7 +18,7 @@ namespace App.Controllers
         _productService = productService;
         _logger = logger;
     }
-    [Route("/cac-san-pham{id?}")]
+    // [Route("/cac-san-pham{id?}")]
      public IActionResult Index()
         {
             //Areas/AreaName/View/ControlerName/Action.cshtml

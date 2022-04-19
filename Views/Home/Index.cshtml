@@ -15,3 +15,12 @@
     <li>asp-route="123"</li>
     <li>asp-route="default"</li>
 </ul>
+<a asp-action="Index" asp-controller="Home" asp-area ="ProductManage" 
+    asp-all-route-data='new Dictionary<string, string>()
+        {
+            {"name","Doan Duy Thanh"},
+            {"abc", "XYZ"},
+            {"id", "1"}
+        }'>
+        VI DU 1
+</a>

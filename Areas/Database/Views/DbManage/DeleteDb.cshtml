@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Xóa db";
+}
+<h1>@ViewData["Title"]</h1>//Thiết lập title
+<p class="alert alert-danger">
+    Có chắc chắn xóa
+</p>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Xóa db</button>
+    <hr/>
+    <a asp-action="Index">Quản lí Db</a>//Anchor tag helper
+</form>

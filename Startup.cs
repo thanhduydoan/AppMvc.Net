@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using App.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace App
 {
@@ -22,12 +24,16 @@ namespace App
             Configuration = configuration;
             ContentRootPath = env.ContentRootPath;
         }
-
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDbContext>(options => {
+                string connectString = Configuration.GetConnectionString("AppMvcConnectionString");
+                options.UseSqlServer(connectString);
+            });
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddSingleton<PlanetService>();
@@ -99,6 +105,8 @@ namespace App
                     pattern: "/{controller}/{action=Index}/{id?}",
                     areaName: "ProductManage"
                 );
+
+            //Controller khong co Area
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

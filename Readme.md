@@ -4,7 +4,7 @@
 -Action trả về bất kỳ kiểu dữ liệu nào, thông thường là IActionResult
 -Các dịch vụ inject vào controller qua hàm tạo
 ## View
--la file cs.html
+-Laf file cs.html
 -View cho Action lưu tạo : /View/CotrollerName/ActionName.cshtml
 -thêm thư mục lưu trữ View:
 //{0} => tên Action
